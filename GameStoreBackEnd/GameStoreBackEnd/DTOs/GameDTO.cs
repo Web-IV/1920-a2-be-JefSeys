@@ -10,5 +10,8 @@ namespace GameStoreBackEnd.DTOs
     {
         [Required]
         public string Name { set; get; }
+        public string Description { set; get; }
+        public double Price { set; get; }
+        public int Rating { set; get; }
     }
 }
