@@ -22,6 +22,7 @@ namespace GameStoreBackEnd.Controllers
         public GamesController(IGameRepository context)
         {
             _gameRepository = context;
+            
         }
 
         [HttpGet]
@@ -40,17 +41,17 @@ namespace GameStoreBackEnd.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Game> PostRecipe(GameDTO game)
+        public ActionResult<Game> PostGame(Game game)
         {
-            Game gameToCreate = new Game() { Name = game.Name, Price = game.Price, Description = game.Description, Rating = game.Rating };
-            _gameRepository.Add(gameToCreate);
+            //Game gameToCreate = new Game() { Name = game.Name, Price = game.Price, Description = game.Description, Rating = game.Rating };
+            _gameRepository.Add(game);
             _gameRepository.SaveChanges();
 
-            return CreatedAtAction(nameof(GetGame), new { id = gameToCreate.Id }, gameToCreate);
+            return CreatedAtAction(nameof(GetGame), new { id = game.Id }, game);
         }
 
         [HttpPut("{id}")]
-        public IActionResult PutRecipe(int id, Game game)
+        public IActionResult PutGame(int id, Game game)
         {
             if (id != game.Id)
             {
@@ -63,7 +64,7 @@ namespace GameStoreBackEnd.Controllers
 
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteRecipe(int id)
+        public IActionResult DeleteGame(int id)
         {
             Game game = _gameRepository.GetBy(id);
             if (game == null)
