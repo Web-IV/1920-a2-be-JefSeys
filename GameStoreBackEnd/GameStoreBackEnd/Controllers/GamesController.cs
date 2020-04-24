@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using GameStoreBackEnd.Data.Repositories;
 using GameStoreBackEnd.DTOs;
 using GameStoreBackEnd.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,7 @@ namespace GameStoreBackEnd.Controllers
     [ApiConventionType(typeof(DefaultApiConventions))]
     [Produces("application/json")]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     public class GamesController : ControllerBase
     {
