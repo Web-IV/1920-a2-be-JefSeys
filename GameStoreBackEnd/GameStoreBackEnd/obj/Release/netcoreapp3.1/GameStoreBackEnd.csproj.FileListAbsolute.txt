@@ -1,0 +1,4 @@
+D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\obj\Release\netcoreapp3.1\GameStoreBackEnd.MvcApplicationPartsAssemblyInfo.cs
+D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\obj\Release\netcoreapp3.1\GameStoreBackEnd.MvcApplicationPartsAssemblyInfo.cache
+D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\obj\Release\netcoreapp3.1\GameStoreBackEnd.AssemblyInfoInputs.cache
+D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\obj\Release\netcoreapp3.1\GameStoreBackEnd.AssemblyInfo.cs

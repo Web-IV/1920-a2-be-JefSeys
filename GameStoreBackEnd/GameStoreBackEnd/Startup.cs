@@ -15,6 +15,7 @@ using Microsoft.IdentityModel.Tokens;
 using NSwag;
 using NSwag.Generation.Processors.Security;
 using System;
+using System.Security.Claims;
 using System.Text;
 
 namespace GameStoreBackEnd
@@ -34,7 +35,8 @@ namespace GameStoreBackEnd
             services.AddControllers();
             services.AddDbContext<GameContext>(options => options.UseSqlServer(Configuration.GetConnectionString("GameContext")));
             services.AddIdentity<IdentityUser, IdentityRole>(cfg => cfg.User.RequireUniqueEmail = true).AddEntityFrameworkStores<GameContext>();
-
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<GameContext>();
+            //services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<GameContext>();
 
             services.AddSwaggerDocument();
             services.AddScoped<GameDataInitializer>();
@@ -97,6 +99,8 @@ namespace GameStoreBackEnd
             });
 
             services.AddCors(options => options.AddPolicy("AllowAllOrigins", builder => builder.AllowAnyOrigin()));
+            services.AddAuthorization(options => { options.AddPolicy("ADMIN", policy => policy.RequireClaim(ClaimTypes.Role, "ADMIN")); });
+            services.AddAuthorization(options => { options.AddPolicy("GEBRUIKER", policy => policy.RequireClaim(ClaimTypes.Role, "GEBRUIKER")); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

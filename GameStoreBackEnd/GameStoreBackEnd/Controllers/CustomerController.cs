@@ -24,10 +24,11 @@ namespace GameStoreBackEnd.Controllers
             _customerRepository = customerRepository;
         }
 
+        [AllowAnonymous]
         [HttpGet()]
-        public ActionResult<CustomerDTO> GetCustomer()
+        public ActionResult<CustomerDTO> GetCustomer(string email)
         {
-            Customer customer = _customerRepository.GetBy(User.Identity.Name);
+            Customer customer = _customerRepository.GetBy(email);
             return new CustomerDTO(customer);
         }
     }

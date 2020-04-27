@@ -1,7 +1,10 @@
 ﻿using GameStoreBackEnd.Data;
 using GameStoreBackEnd.Models;
 using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace GameStoreBackEnd.Data
@@ -23,20 +26,32 @@ namespace GameStoreBackEnd.Data
             if (_dbContext.Database.EnsureCreated())
             {
                 //seeding the database with recipes, see DBContext         
-                Customer customer = new Customer { Email = "jef.seys@gmail.be", FirstName = "Jef", LastName = "Seys", Type = "ADMIN" };
-                _dbContext.Customers.Add(customer);
-                await CreateUser(customer.Email, "P@ssword1111");
-                Customer student = new Customer { Email = "brandon.gomes@gmail.com", FirstName = "Jef", LastName = "Seys", Type = "GEBRUIKER" };
-                _dbContext.Customers.Add(student);
-                await CreateUser(student.Email, "P@ssword1111");
+                Customer admin = new Customer { Email = "jef.seys@gmail.be", FirstName = "Jef", LastName = "Seys", Type = "ADMIN" };
+                //var user1 = new IdentityUser() { UserName = admin.FirstName, Email = admin.Email };
+                _dbContext.Customers.Add(admin);
+                await CreateUser(admin.Email, "P@ssword1111", "ADMIN");
+                //await _userManager.CreateAsync(user1, "P@ssword1111");
+                //await _userManager.AddClaimsAsync(user1, new List<Claim>() { new Claim(ClaimTypes.Role, "ADMIN") });
+
+
+                Customer gebruiker = new Customer { Email = "brandon.gomes@gmail.com", FirstName = "Brandon", LastName = "Gomes", Type = "GEBRUIKER" };
+                //var user2 = new IdentityUser() { UserName = gebruiker.FirstName, Email = gebruiker.Email };
+                _dbContext.Customers.Add(gebruiker);
+                await CreateUser(gebruiker.Email, "P@ssword1111", "GEBRUIKER");
+                //await _userManager.CreateAsync(user2, "P@ssword1111");
+                //await _userManager.AddClaimsAsync(user2, new List<Claim>() { new Claim(ClaimTypes.Role, "GEBRUIKER") });
+
+
                 _dbContext.SaveChanges();
             }
         }
 
-        private async Task CreateUser(string email, string password)
+        private async Task CreateUser(string email, string password, string type)
         {
             var user = new IdentityUser { UserName = email, Email = email };
             await _userManager.CreateAsync(user, password);
+            await _userManager.AddClaimsAsync(user, new List<Claim>() { new Claim(ClaimTypes.Role, type) });
+            Console.WriteLine(user.Email + " " + password);
         }
     }
 }

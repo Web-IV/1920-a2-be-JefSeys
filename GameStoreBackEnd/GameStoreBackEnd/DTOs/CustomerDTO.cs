@@ -13,6 +13,7 @@ namespace GameStoreBackEnd.DTOs
         public string LastName { get; set; }
 
         public string Email { get; set; }
+        public string Type { get; set; }
 
         public IEnumerable<Game> Games { get; set; }
 
@@ -23,6 +24,7 @@ namespace GameStoreBackEnd.DTOs
             FirstName = customer.FirstName;
             LastName = customer.LastName;
             Email = customer.Email;
+            Type = customer.Type;
         }
     }
 }

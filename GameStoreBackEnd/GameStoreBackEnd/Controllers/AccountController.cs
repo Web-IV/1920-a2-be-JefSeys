@@ -68,7 +68,7 @@ namespace GameStoreBackEnd.Controllers
         public async Task<ActionResult<String>> Register(RegisterDTO model)
         {
             IdentityUser user = new IdentityUser { UserName = model.Email, Email = model.Email };
-            Customer customer = new Customer { Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
+            Customer customer = new Customer { Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Type = "GEBRUIKER" };
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)

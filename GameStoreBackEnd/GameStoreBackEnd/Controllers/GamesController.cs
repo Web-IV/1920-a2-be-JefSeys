@@ -42,6 +42,7 @@ namespace GameStoreBackEnd.Controllers
             return game;
         }
 
+        //[Authorize(Policy = "ADMIN")]
         [HttpPost]
         public ActionResult<Game> PostGame(Game game)
         {
@@ -52,6 +53,7 @@ namespace GameStoreBackEnd.Controllers
             return CreatedAtAction(nameof(GetGame), new { id = game.Id }, game);
         }
 
+        //[Authorize(Policy = "ADMIN")]
         [HttpPut("{id}")]
         public IActionResult PutGame(int id, Game game)
         {
@@ -65,6 +67,7 @@ namespace GameStoreBackEnd.Controllers
         }
 
 
+        //[Authorize(Policy = "ADMIN")]
         [HttpDelete("{id}")]
         public IActionResult DeleteGame(int id)
         {

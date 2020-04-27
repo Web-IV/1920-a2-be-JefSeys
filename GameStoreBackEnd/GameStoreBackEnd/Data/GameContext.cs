@@ -1,4 +1,5 @@
 ﻿using GameStoreBackEnd.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GameStoreBackEnd.Data
 {
-    public class GameContext: IdentityDbContext
+    public class GameContext: IdentityDbContext//<IdentityUser>
     {
         public DbSet<Game> Games { get; set; }
         public DbSet<Customer> Customers { get; set; }
