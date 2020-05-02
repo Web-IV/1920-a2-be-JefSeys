@@ -15,6 +15,7 @@ namespace GameStoreBackEnd.Models
         public double Price { set; get; }
         public string Description { set; get; }
         public int Rating { set; get; }
+        public string Base64Img { get; set; }
 
         public Game()
         {
