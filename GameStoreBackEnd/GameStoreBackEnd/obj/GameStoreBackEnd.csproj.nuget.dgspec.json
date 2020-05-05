@@ -81,6 +81,14 @@
             "NSwag.Core": {
               "target": "Package",
               "version": "[13.4.2, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "System.Windows.Extensions": {
+              "target": "Package",
+              "version": "[4.7.0, )"
             }
           },
           "imports": [

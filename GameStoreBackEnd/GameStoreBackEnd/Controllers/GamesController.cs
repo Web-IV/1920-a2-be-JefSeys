@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using GameStoreBackEnd.Data.Repositories;
@@ -24,7 +26,7 @@ namespace GameStoreBackEnd.Controllers
         public GamesController(IGameRepository context)
         {
             _gameRepository = context;
-            
+
         }
 
         [HttpGet]
@@ -46,7 +48,7 @@ namespace GameStoreBackEnd.Controllers
         [HttpPost]
         public ActionResult<Game> PostGame(Game game)
         {
-            //Game gameToCreate = new Game() { Name = game.Name, Price = game.Price, Description = game.Description, Rating = game.Rating };
+            //Game gameToCreate = new Game() { Name = game.Name, Price = game.Price, Description = game.Description, Rating = game.Rating, Base64Img = base64 };
             _gameRepository.Add(game);
             _gameRepository.SaveChanges();
 

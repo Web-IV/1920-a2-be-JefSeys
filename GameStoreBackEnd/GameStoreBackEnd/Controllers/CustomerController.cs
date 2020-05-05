@@ -28,8 +28,15 @@ namespace GameStoreBackEnd.Controllers
         [HttpGet()]
         public ActionResult<CustomerDTO> GetCustomer(string email)
         {
-            Customer customer = _customerRepository.GetBy(email);
-            return new CustomerDTO(customer);
+            if(email == "" || email is null)
+            {
+                return null;
+            }
+            else
+            {
+                Customer customer = _customerRepository.GetBy(email);
+                return new CustomerDTO(customer);
+            }
         }
     }
 }
