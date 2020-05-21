@@ -37,6 +37,7 @@ namespace GameStoreBackEnd.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public ActionResult<Game> GetGame(int id)
         {
             Game game = _gameRepository.GetBy(id);

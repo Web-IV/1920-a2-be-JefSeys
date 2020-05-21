@@ -16,6 +16,7 @@ namespace GameStoreBackEnd.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [ApiConventionType(typeof(DefaultApiConventions))]
+    [Authorize]
     public class AccountController: ControllerBase
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -48,7 +49,7 @@ namespace GameStoreBackEnd.Controllers
             if (user != null)
             {
                 var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
-
+                
                 if (result.Succeeded)
                 {
                     string token = GetToken(user);

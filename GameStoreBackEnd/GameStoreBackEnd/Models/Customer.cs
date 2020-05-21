@@ -22,8 +22,6 @@ namespace GameStoreBackEnd.Models
         public string Email { get; set; }
 
         public string Type { get; set; }
-
-        public IEnumerable<Game> Games { get; set; }
         #endregion
 
         #region Constructors

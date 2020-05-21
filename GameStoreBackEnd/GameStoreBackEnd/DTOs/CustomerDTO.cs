@@ -15,8 +15,6 @@ namespace GameStoreBackEnd.DTOs
         public string Email { get; set; }
         public string Type { get; set; }
 
-        public IEnumerable<Game> Games { get; set; }
-
         public CustomerDTO() { }
 
         public CustomerDTO(Customer customer) : this()

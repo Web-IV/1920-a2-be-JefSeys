@@ -34,7 +34,6 @@ namespace GameStoreBackEnd.Data
             builder.Entity<Customer>().Property(c => c.FirstName).IsRequired().HasMaxLength(50);
             builder.Entity<Customer>().Property(c => c.Email).IsRequired().HasMaxLength(100);
             builder.Entity<Customer>().Property(c => c.Type).IsRequired();
-            builder.Entity<Customer>().HasMany(c => c.Games).WithOne().OnDelete(DeleteBehavior.Restrict);
 
             System.IO.FileStream fs1 = new FileStream(@"../GameStoreBackEnd/Images/Factorio.jpg", FileMode.Open);
             System.IO.BufferedStream bf1 = new BufferedStream(fs1);
