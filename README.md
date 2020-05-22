@@ -6,5 +6,7 @@ De backend voor een webshop, met deze backend kan men inloggen, registreren, gam
 
 
 2 bestaande types van accounts:
+
 -Admin
+
 -Gebruiker
