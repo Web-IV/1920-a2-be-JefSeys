@@ -51,7 +51,7 @@ namespace GameStoreBackEnd.Data.Repositories
 
         public void Update(Game game)
         {
-            //_context.Update(game);
+            _context.Update(game);
         }
 
         public void SaveChanges()

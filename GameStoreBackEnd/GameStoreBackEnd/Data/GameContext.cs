@@ -85,11 +85,7 @@ namespace GameStoreBackEnd.Data
                  new Game { Id = 5, Name = "Assassin's Creed", Price = 60, Description = "Assassin's Creed description", Rating = 5, Base64Img = img5 },
                  new Game { Id = 6, Name = "Hearts Of Iron IV", Price = 60, Description = "Hearts Of Iron IV description", Rating = 5, Base64Img = img6 },
                  new Game { Id = 7, Name = "Rust", Price = 60, Description = "Rust description", Rating = 5, Base64Img = img7 }
-                 );/*
-            builder.Entity<Customer>().HasData(
-                new Customer { CustomerId = 1, Email = "admin", FirstName = "Jef", LastName = "Seys", Type = "ADMIN" },
-                new Customer { CustomerId = 2, Email = "brandon", FirstName = "Brandon", LastName = "Gomes", Type = "GEBRUIKER" }
-                );*/
+                 );
         }
     }
 }

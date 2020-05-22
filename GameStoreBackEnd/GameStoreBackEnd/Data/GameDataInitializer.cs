@@ -27,19 +27,13 @@ namespace GameStoreBackEnd.Data
             {
                 //seeding the database with recipes, see DBContext         
                 Customer admin = new Customer { Email = "jef.seys@gmail.be", FirstName = "Jef", LastName = "Seys", Type = "ADMIN" };
-                //var user1 = new IdentityUser() { UserName = admin.FirstName, Email = admin.Email };
                 _dbContext.Customers.Add(admin);
                 await CreateUser(admin.Email, "P@ssword1111", "ADMIN");
-                //await _userManager.CreateAsync(user1, "P@ssword1111");
-                //await _userManager.AddClaimsAsync(user1, new List<Claim>() { new Claim(ClaimTypes.Role, "ADMIN") });
 
 
                 Customer gebruiker = new Customer { Email = "brandon.gomes@gmail.com", FirstName = "Brandon", LastName = "Gomes", Type = "GEBRUIKER" };
-                //var user2 = new IdentityUser() { UserName = gebruiker.FirstName, Email = gebruiker.Email };
                 _dbContext.Customers.Add(gebruiker);
                 await CreateUser(gebruiker.Email, "P@ssword1111", "GEBRUIKER");
-                //await _userManager.CreateAsync(user2, "P@ssword1111");
-                //await _userManager.AddClaimsAsync(user2, new List<Claim>() { new Claim(ClaimTypes.Role, "GEBRUIKER") });
 
 
                 _dbContext.SaveChanges();
@@ -51,7 +45,6 @@ namespace GameStoreBackEnd.Data
             var user = new IdentityUser { UserName = email, Email = email };
             await _userManager.CreateAsync(user, password);
             await _userManager.AddClaimsAsync(user, new List<Claim>() { new Claim(ClaimTypes.Role, type) });
-            Console.WriteLine(user.Email + " " + password);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace GameStoreBackEnd.Data.Repositories
             _customers = dbContext.Customers;
         }
 
-        public Customer GetBy(string email)
+        public Customer GetByEmail(string email)
         {
             return _customers.SingleOrDefault(c => c.Email == email);
         }

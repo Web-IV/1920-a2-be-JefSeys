@@ -145,10 +145,10 @@ D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStor
 D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
 D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
-D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\obj\Debug\netcoreapp3.1\GameStoreBackEnd.csprojAssemblyReference.cache
 D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\bin\Debug\netcoreapp3.1\GameStoreBackEnd.StaticWebAssets.xml
 D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\obj\Debug\netcoreapp3.1\staticwebassets\GameStoreBackEnd.StaticWebAssets.Manifest.cache
 D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\obj\Debug\netcoreapp3.1\staticwebassets\GameStoreBackEnd.StaticWebAssets.xml
 D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\obj\Debug\netcoreapp3.1\GameStoreBackEnd.MvcApplicationPartsAssemblyInfo.cs
 D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\obj\Debug\netcoreapp3.1\GameStoreBackEnd.MvcApplicationPartsAssemblyInfo.cache
+D:\TI\Jaar 2\Semester 2\Webapps IV\ProjectWebIVBackEnd\GameStoreBackEnd\GameStoreBackEnd\obj\Debug\netcoreapp3.1\GameStoreBackEnd.csprojAssemblyReference.cache

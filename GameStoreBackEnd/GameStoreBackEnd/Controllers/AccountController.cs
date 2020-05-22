@@ -10,6 +10,7 @@ using GameStoreBackEnd.Models;
 using GameStoreBackEnd.DTOs;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using System.Collections.Generic;
 
 namespace GameStoreBackEnd.Controllers
 {
@@ -52,7 +53,7 @@ namespace GameStoreBackEnd.Controllers
                 
                 if (result.Succeeded)
                 {
-                    string token = GetToken(user);
+                    string token = await GetTokenAsync(user);
                     return Created("", token); //returns only the token                    
                 }
             }
@@ -76,7 +77,7 @@ namespace GameStoreBackEnd.Controllers
             {
                 _customerRepository.Add(customer);
                 _customerRepository.SaveChanges();
-                string token = GetToken(user);
+                string token = await GetTokenAsync(user);
                 return Created("", token);
             }
             return BadRequest();
@@ -95,14 +96,17 @@ namespace GameStoreBackEnd.Controllers
             return user == null;
         }
 
-        private String GetToken(IdentityUser user)
+        private async Task<string> GetTokenAsync(IdentityUser user)
         {
+            var roleClaims = await _userManager.GetClaimsAsync(user);
             // Create the token
-            var claims = new[]
+            var claims = new List<Claim>()
             {
               new Claim(JwtRegisteredClaimNames.Sub, user.Email),
               new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
             };
+
+            claims.AddRange(roleClaims);
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
 

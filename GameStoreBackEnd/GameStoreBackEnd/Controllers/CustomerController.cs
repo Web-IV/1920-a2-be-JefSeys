@@ -34,7 +34,7 @@ namespace GameStoreBackEnd.Controllers
             }
             else
             {
-                Customer customer = _customerRepository.GetBy(email);
+                Customer customer = _customerRepository.GetByEmail(email);
                 return new CustomerDTO(customer);
             }
         }

@@ -45,18 +45,21 @@ namespace GameStoreBackEnd.Controllers
             return game;
         }
 
-        //[Authorize(Policy = "ADMIN")]
+
+        
+        [Authorize(Policy = "ADMIN")]
         [HttpPost]
         public ActionResult<Game> PostGame(Game game)
         {
-            //Game gameToCreate = new Game() { Name = game.Name, Price = game.Price, Description = game.Description, Rating = game.Rating, Base64Img = base64 };
+            
             _gameRepository.Add(game);
             _gameRepository.SaveChanges();
 
             return CreatedAtAction(nameof(GetGame), new { id = game.Id }, game);
         }
 
-        //[Authorize(Policy = "ADMIN")]
+        
+        [Authorize(Policy = "ADMIN")]
         [HttpPut("{id}")]
         public IActionResult PutGame(int id, Game game)
         {
@@ -70,7 +73,7 @@ namespace GameStoreBackEnd.Controllers
         }
 
 
-        //[Authorize(Policy = "ADMIN")]
+        [Authorize(Policy = "ADMIN")]
         [HttpDelete("{id}")]
         public IActionResult DeleteGame(int id)
         {

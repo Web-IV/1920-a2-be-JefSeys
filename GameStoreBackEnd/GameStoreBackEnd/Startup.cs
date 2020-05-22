@@ -35,8 +35,6 @@ namespace GameStoreBackEnd
             services.AddControllers();
             services.AddDbContext<GameContext>(options => options.UseSqlServer(Configuration.GetConnectionString("GameContext")));
             services.AddIdentity<IdentityUser, IdentityRole>(cfg => cfg.User.RequireUniqueEmail = true).AddEntityFrameworkStores<GameContext>();
-            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<GameContext>();
-            //services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<GameContext>();
 
             services.AddSwaggerDocument();
             services.AddScoped<GameDataInitializer>();
