@@ -1,7 +1,7 @@
 Project WebIV Back End
 -Jef Seys
 
-Een website om game te bekijken, games te kopen, ratings te zien en meer.
+De backend voor een webshop, met deze backend kan men inloggen, registreren, games ophalen, games verwijderen, ... .
 
 
 Bestaande accounts (de optie om te registreren als gebruiker is er):
